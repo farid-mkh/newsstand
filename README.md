@@ -4,7 +4,7 @@
 
 [doc](https://developer.nytimes.com/docs/top-stories-product/1/overview)
 
-> [example endpoint](https://api.nytimes.com/svc/topstories/v2/home.json?api-key=APIKEY)
+> [example endpoint](https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=APIKEY)
 
 ## NewsApi.org
 
@@ -16,4 +16,4 @@
 
 [doc](https://open-platform.theguardian.com/documentation/edition)
 
-> [example endpoint](https://content.guardianapis.com/sections?api-key=APIKEY)
+> [example endpoint](https://content.guardianapis.com/search?api-key=APIKEY)

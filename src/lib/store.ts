@@ -1,8 +1,10 @@
 import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
-
+import newsSlice from "./features/news/newsSlice";
 export const makeStore = () => {
     return configureStore({
-        reducer: {},
+        reducer: {
+            news: newsSlice,
+        },
     });
 };
 
