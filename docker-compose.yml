@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+    frontend:
+        build: .
+        container_name: news-frontend
+        ports:
+            - "3000:3000"
+        command: "npm run start"
+        networks:
+            - next-network
+networks:
+    next-network:
+        driver: bridge
