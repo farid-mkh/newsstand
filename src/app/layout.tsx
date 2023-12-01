@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
-import "./globals.css";
+import "@/assets/css/globals.css";
 import StoreProvider from "@/lib/StoreProvider";
 import LayoutNav from "./components/layout/LayoutNav";
 

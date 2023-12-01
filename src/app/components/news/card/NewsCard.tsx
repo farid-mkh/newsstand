@@ -7,11 +7,12 @@ dayjs.extend(relativeTime);
 
 interface Props {
     item: NewsModel;
+    setSelectedNews: () => void;
 }
 
-const NewsCard: React.FC<Props> = ({ item }) => {
+const NewsCard: React.FC<Props> = ({ item, setSelectedNews }) => {
     return (
-        <div>
+        <div onClick={() => setSelectedNews()} className="cursor-pointer">
             {item.img ? (
                 <div
                     className="h-36 overflow-y-hidden bg-center bg-cover w-full rounded mb-4"
