@@ -1,3 +1,4 @@
+import { NYTArticle, NewsModel, NewsorgArticle } from "@/types";
 import axios from "axios";
 
 interface NYTQuery {
@@ -31,14 +32,13 @@ export const fetchNYTHome = async (params: NYTQuery = {}) => {
                 },
             }
         );
-        return data.response.docs.map((article) => ({
+        return data.response.docs.map((article: NYTArticle) => ({
             title: article.headline.main,
             published_at: article.published_date,
             description: article.abstract,
-            img:
-                article.multimedia && article.multimedia.length
-                    ? `https://static01.nyt.com/${article.multimedia[0].url}`
-                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw6dtqA3NU1wthgTlOth4Y7WE4kl7M-b6z8g&usqp=CAU",
+            img: article.multimedia?.length
+                ? `https://static01.nyt.com/${article.multimedia[0].url}`
+                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw6dtqA3NU1wthgTlOth4Y7WE4kl7M-b6z8g&usqp=CAU",
             source: "NYT",
         }));
     } catch (e) {
@@ -68,7 +68,7 @@ export const fetchNewsorgHome = async (params: NewsorgQuery = {}) => {
             }
         );
         return data.articles
-            .map((i) => ({
+            .map((i: any) => ({
                 title: i.title,
                 img:
                     i.urlToImage ??
@@ -77,7 +77,7 @@ export const fetchNewsorgHome = async (params: NewsorgQuery = {}) => {
                 published_at: i.publishedAt,
                 source: "newsapi.org",
             }))
-            .filter((i) => i.title.trim() !== "[Removed]");
+            .filter((i: NewsModel) => i.title.trim() !== "[Removed]");
     } catch (e) {
         throw e;
     }
@@ -104,9 +104,9 @@ export const fetchGuardianHome = (params: GuardianQuery = {}) => {
         })
         .then(({ data }) => {
             return data.response.results
-                .map((articles) =>
+                .map((articles: NewsorgArticle) =>
                     articles.blocks.body
-                        .map((a) =>
+                        .map((a: any) =>
                             a.attributes.title
                                 ? {
                                       title: a.attributes.title,
@@ -117,7 +117,7 @@ export const fetchGuardianHome = (params: GuardianQuery = {}) => {
                                   }
                                 : null
                         )
-                        .filter((i) => i)
+                        .filter((i: NewsModel) => !!i)
                 )
                 .flat();
         })

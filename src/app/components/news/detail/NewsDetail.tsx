@@ -7,7 +7,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
 interface Props {
-    selected: NewsModel;
+    selected?: NewsModel;
     show: boolean;
     setShow: (val: boolean) => void;
 }

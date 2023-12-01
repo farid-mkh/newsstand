@@ -31,7 +31,7 @@ const NewsFilters: React.FC<Props> = ({ source, onChange }) => {
         category?: typeof category;
     }) {
         setLoading(true);
-        dispatch(fetchNewsAsync(params)).then(() => {
+        dispatch(fetchNewsAsync(params as any)).then(() => {
             setLoading(false);
         });
     }
@@ -42,8 +42,8 @@ const NewsFilters: React.FC<Props> = ({ source, onChange }) => {
             category: category === "all" ? undefined : category,
         });
     }
-    function handleCategory(e: React.ChangeEvent) {
-        const val = e.target.value;
+    function handleCategory(e: React.ChangeEvent<HTMLSelectElement>) {
+        const val = e.target.value as (typeof CategoryList)[number];
         setCategory(val);
         handleUpdateNews({
             from,
@@ -82,8 +82,8 @@ const NewsFilters: React.FC<Props> = ({ source, onChange }) => {
                         apply: "Filter",
                     },
                 }}
-                value={from}
-                onChange={handleDatePicker}
+                value={from as any}
+                onChange={handleDatePicker as any}
             />
             <select
                 value={category}

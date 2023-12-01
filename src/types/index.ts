@@ -16,22 +16,22 @@ export interface NYTArticle {
     org_facet: string[];
     per_facet: string[];
     geo_facet: string[];
-    multimedia: [
-        {
-            url: string;
-            format: string;
-            height: number;
-            width: number;
-            type: string;
-            subtype: string;
-            caption: string;
-            copyright: string;
-        }[]
-    ];
+    headline: any;
+    multimedia: {
+        url: string;
+        format: string;
+        height: number;
+        width: number;
+        type: string;
+        subtype: string;
+        caption: string;
+        copyright: string;
+    }[];
     short_url: string;
 }
 
 export interface NewsorgArticle {
+    blocks: any;
     source: {
         id: string | number;
         name: string;

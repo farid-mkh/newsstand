@@ -8,6 +8,7 @@ import NewsFilters from "./news/filters/NewsFilters";
 import Newspaper from "@/assets/img/newspaper.svg";
 import Image from "next/image";
 import NewsDetail from "./news/detail/NewsDetail";
+import { NewsModel } from "@/types";
 
 interface Props {}
 
@@ -28,7 +29,7 @@ const HomeNews: React.FC<Props> = (props) => {
     }, []);
     // news details
     const [show, setShow] = useState(false);
-    const [selectedNews, setSelectedNews] = useState(null);
+    const [selectedNews, setSelectedNews] = useState<NewsModel>();
     if (loading)
         return (
             <div className="w-full grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
