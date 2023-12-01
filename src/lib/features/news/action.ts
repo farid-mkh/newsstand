@@ -8,6 +8,8 @@ import { fetchNYTHome, fetchNewsorgHome, fetchGuardianHome } from "./api";
 // typically used to make async requests.
 interface RequestQueries {
     q?: string;
+    from?: string;
+    category?: "health" | "science" | "sports" | "technology" | "business";
 }
 export const fetchNewsAsync = createAsyncThunk(
     "news/fetchNews",

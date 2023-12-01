@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import _ from "lodash";
 import { useAppDispatch } from "@/lib/hook";
 import { fetchNewsAsync } from "@/lib/features/news/action";
-import LayoutLinearLoading from "../linear/LayoutLinearLoading";
+import AppLinearLoading from "@/app/components/app/linear/AppLinearLoading";
 
 interface Props {}
 
@@ -23,7 +23,7 @@ const LayoutSearch: React.FC<Props> = (props) => {
     return (
         <>
             {loading ? (
-                <LayoutLinearLoading className="fixed top-0 left-0 right-0" />
+                <AppLinearLoading className="fixed top-0 left-0 right-0" />
             ) : (
                 ""
             )}

@@ -4,7 +4,7 @@ interface Props {
     height?: string;
     type?: "list-image" | "image" | "list";
 }
-const ThemeSkeletonLoading: React.FC<Props> = ({
+const AppSkeletonLoading: React.FC<Props> = ({
     width = "100%",
     height = "100%",
     type = "list-image",
@@ -39,4 +39,4 @@ const ThemeSkeletonLoading: React.FC<Props> = ({
         </div>
     );
 };
-export default ThemeSkeletonLoading;
+export default AppSkeletonLoading;

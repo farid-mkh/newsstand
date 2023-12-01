@@ -5,7 +5,7 @@ interface Props {
     className?: string;
 }
 
-const LayoutLinearLoading: React.FC<Props> = ({ className = "" }) => {
+const AppLinearLoading: React.FC<Props> = ({ className = "" }) => {
     return (
         <div className={`linear-activity ${className}`}>
             <div className="indeterminate"></div>
@@ -13,4 +13,4 @@ const LayoutLinearLoading: React.FC<Props> = ({ className = "" }) => {
     );
 };
 
-export default LayoutLinearLoading;
+export default AppLinearLoading;

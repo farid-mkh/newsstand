@@ -13,9 +13,10 @@ const NewsCard: React.FC<Props> = ({ item }) => {
     return (
         <div>
             {item.img ? (
-                <div className="h-52 overflow-y-hidden">
-                    <img src={item.img} className="w-full" />
-                </div>
+                <div
+                    className="h-36 overflow-y-hidden bg-center bg-cover w-full rounded mb-4"
+                    style={{ backgroundImage: `url(${item.img})` }}
+                ></div>
             ) : (
                 ""
             )}
