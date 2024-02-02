@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        nyt_api_url: process.env.NYT_API_URL,
-        nyt_api_key: process.env.NYT_API_KEY,
-        newsorg_api_url: process.env.NEWSORG_API_URL,
-        newsorg_api_key: process.env.NEWSORG_API_KEY,
-        guardian_api_url: process.env.GUARDIAN_API_URL,
-        guardian_api_key: process.env.GUARDIAN_API_KEY,
+        NYT_API_URL: process.env.NYT_API_URL,
+        NYT_API_KEY: process.env.NYT_API_KEY,
+        NEWSORG_API_URL: process.env.NEWSORG_API_URL,
+        NEWSORG_API_KEY: process.env.NEWSORG_API_KEY,
+        GUARDIAN_API_URL: process.env.GUARDIAN_API_URL,
+        GUARDIAN_API_KEY: process.env.GUARDIAN_API_KEY,
     },
 };
 
