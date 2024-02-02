@@ -24,11 +24,11 @@ export const fetchNYTHome = async (params: NYTQuery = {}) => {
     }
     try {
         const { data } = await axios.get(
-            `${process.env.nyt_api_url}/search/v2/articlesearch.json`,
+            `${process.env.NYT_API_URL}/search/v2/articlesearch.json`,
             {
                 params: {
                     ...queries,
-                    "api-key": process.env.nyt_api_key,
+                    "api-key": process.env.NYT_API_KEY,
                 },
             }
         );
@@ -59,11 +59,11 @@ interface NewsorgQuery {
 export const fetchNewsorgHome = async (params: NewsorgQuery = {}) => {
     try {
         const { data } = await axios.get(
-            `${process.env.newsorg_api_url}/top-headlines`,
+            `${process.env.NEWSORG_API_URL}/top-headlines`,
             {
                 params: {
                     ...params,
-                    apiKey: process.env.newsorg_api_key,
+                    apiKey: process.env.NEWSORG_API_KEY,
                 },
             }
         );
@@ -95,11 +95,11 @@ export const fetchGuardianHome = (params: GuardianQuery = {}) => {
         Object.assign(queries, { "from-date": params.from });
     }
     return axios
-        .get(`${process.env.guardian_api_url}/search`, {
+        .get(`${process.env.GUARDIAN_API_URL}/search`, {
             params: {
                 ...queries,
                 "show-blocks": "all",
-                "api-key": process.env.guardian_api_key,
+                "api-key": process.env.GUARDIAN_API_KEY,
             },
         })
         .then(({ data }) => {

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HomeNews from "./components/HomeNews";
 
 export default function Home() {

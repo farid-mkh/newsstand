@@ -32,7 +32,7 @@ const HomeNews: React.FC<Props> = (props) => {
     const [selectedNews, setSelectedNews] = useState<NewsModel>();
     if (loading)
         return (
-            <div className="w-full grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="loading w-full grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {Array(12)
                     .fill(null)
                     .map((i, id) => (
@@ -41,7 +41,7 @@ const HomeNews: React.FC<Props> = (props) => {
             </div>
         );
     return (
-        <div className="w-full">
+        <div className="news w-full">
             <NewsFilters
                 source={source}
                 onChange={(e) =>
@@ -62,12 +62,12 @@ const HomeNews: React.FC<Props> = (props) => {
                     ))}
                 </div>
             ) : (
-                <div className="w-full flex items-center justify-center mt-20">
+                <div className="nothing w-full flex items-center justify-center mt-20">
                     <div className="text-center">
                         <Image
                             src={Newspaper}
                             alt="empty news"
-                            width="100"
+                            fill
                             className="invert mx-auto mb-10"
                         />
                         <p>Nothing Found!</p>

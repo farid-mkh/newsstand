@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
+import React, { useState } from "react";
+import Datepicker from "react-tailwindcss-datepicker";
 import AppLinearLoading from "@/app/components/app/linear/AppLinearLoading";
 import { useAppDispatch } from "@/lib/hook";
 import { fetchNewsAsync } from "@/lib/features/news/action";

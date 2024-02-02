@@ -12,7 +12,10 @@ interface Props {
 
 const NewsCard: React.FC<Props> = ({ item, setSelectedNews }) => {
     return (
-        <div onClick={() => setSelectedNews()} className="cursor-pointer">
+        <div
+            onClick={() => setSelectedNews()}
+            className="news-card cursor-pointer"
+        >
             {item.img ? (
                 <div
                     className="h-36 overflow-y-hidden bg-center bg-cover w-full rounded mb-4"

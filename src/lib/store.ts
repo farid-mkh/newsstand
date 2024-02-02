@@ -1,17 +1,23 @@
-import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
+import {
+    Action,
+    ThunkAction,
+    combineReducers,
+    configureStore,
+} from "@reduxjs/toolkit";
 import newsSlice from "./features/news/newsSlice";
-export const makeStore = () => {
+// Create the root reducer separately so we can extract the RootState type
+const rootReducer = combineReducers({
+    news: newsSlice,
+});
+export const setupStore = (preloadedState?: Partial<RootState>) => {
     return configureStore({
-        reducer: {
-            news: newsSlice,
-        },
+        reducer: rootReducer,
+        preloadedState,
     });
 };
 
-// Infer the type of makeStore
-export type AppStore = ReturnType<typeof makeStore>;
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<AppStore["getState"]>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = AppStore["dispatch"];
 export type AppThunk<ReturnType = void> = ThunkAction<
     ReturnType,
